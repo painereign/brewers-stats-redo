@@ -10,15 +10,21 @@
 
   /** @ngInject */
   function TablesPageCtrl($scope, $filter, editableOptions, editableThemes) {
-  console.log("tables ctrl");
+  
 
+
+  //$scope.$on('someEvent', function(event, args){});
+
+//if (firebase == null){
+  /*
   var config = {
     apiKey: "AIzaSyBcQ9HIE-b2Wf2matGSzFmPgXa-JpiSjhA",
     authDomain: "https://brewers-stats.firebaseapp.com/",
     databaseURL: "https://brewers-stats.firebaseio.com",
     storageBucket: "brewers-stats.appspot.com"//gs://brewers-stats.appspot.com
   };
-  firebase.initializeApp(config);
+  firebase.initializeApp(config);*/
+//}
 
   var ref = firebase.database().ref("mlbstandings");
   ref.once("value")
@@ -198,6 +204,17 @@
       }
     ];
     });
+  
+
+  $scope.register = function(){
+    $scope.$broadcast('fbinfo', $scope.NextFive);
+    $scope.$emit('fbinfo', $scope.NextFive);
+    console.log("register");
   }
+
+  $scope.register();
+
+
+}
 
 })();

@@ -6,43 +6,68 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.batting.chartJs')
-    .controller('chartJsWaveCtrl1', chartJsWaveCtrl);
+    .controller('chartJsWaveCtrl2', chartJsWaveCtrl2);
 
   /** @ngInject */
-  function chartJsWaveCtrl($scope, $interval, stopableInterval) {
-    $scope.labels =["Peralta", "Davies", "Anderson", "Nelson", "Garza", "Guerra", "Espino"];
-    $scope.IP = [1, 9, 3, 4, 5, 6, 1];
-    $scope.K =[1, 1, 3, 4, 5, 6, 1];
-    $scope.WHIP =[1, 1, 3, 4, 5, 6, 1];
-    $scope.ERA =[1, 1, 3, 4, 5, 6, 1];
-    
-/*
-  var config = {
-    apiKey: "AIzaSyBcQ9HIE-b2Wf2matGSzFmPgXa-JpiSjhA",
-    authDomain: "https://brewers-stats.firebaseapp.com/",
-    databaseURL: "https://brewers-stats.firebaseio.com",
-    storageBucket: "brewers-stats.appspot.com"//gs://brewers-stats.appspot.com
-  };
+  function chartJsWaveCtrl2($scope, $interval, stopableInterval) {
+    $scope.labels1 =[ "Arcia", "Bandy", "Braun", "Broxton", "Perez", "Pina", "Santana", "Shaw", "Thames", "Villar"];
+    console.log("batting lables");
 
-//this uncommented - config is not defined
-  firebase.initializeApp(config);
-
-  var ref3 = firebase.database().ref("Pitching");
+  var ref3 = firebase.database().ref("Batting");
   ref3.once("value")
     .then(function(snapshot){
     var key = snapshot.key; 
-    console.log(snapshot.child("Anderson/IP").val());
-    $scope.IP = [
-        snapshot.child("Anderson/IP").val(),
-        snapshot.child("Davies/IP").val(),
-        snapshot.child("Espino/IP").val(),
-        snapshot.child("Garza/IP").val(),
-        snapshot.child("Guerra/IP").val(),
-        snapshot.child("Nelson/IP").val(),
-        snapshot.child("Peralta/IP").val()
+    console.log("batting loop");
+    $scope.BA = [
+        snapshot.child("arcia/BA").val(),
+        snapshot.child("bandy/BA").val(),
+        snapshot.child("braun/BA").val(),
+        snapshot.child("broxton/BA").val(),
+        snapshot.child("perez/BA").val(),
+        snapshot.child("pina/BA").val(),
+        snapshot.child("santana/BA").val(),
+        snapshot.child("shaw/BA").val(),
+        snapshot.child("thames/BA").val(),
+        snapshot.child("villar/BA").val()
+
+    ];
+    $scope.OBP = [
+        snapshot.child("arcia/OBP").val(),
+        snapshot.child("bandy/OBP").val(),
+        snapshot.child("braun/OBP").val(),
+        snapshot.child("broxton/OBP").val(),
+        snapshot.child("perez/OBP").val(),
+        snapshot.child("pina/OBP").val(),
+        snapshot.child("santana/OBP").val(),
+        snapshot.child("shaw/OBP").val(),
+        snapshot.child("thames/OBP").val(),
+        snapshot.child("villar/OBP").val()
+    ];
+    $scope.SLG = [
+        snapshot.child("arcia/SLG").val(),
+        snapshot.child("bandy/SLG").val(),
+        snapshot.child("braun/SLG").val(),
+        snapshot.child("broxton/SLG").val(),
+        snapshot.child("perez/SLG").val(),
+        snapshot.child("pina/SLG").val(),
+        snapshot.child("santana/SLG").val(),
+        snapshot.child("shaw/SLG").val(),
+        snapshot.child("thames/SLG").val(),
+        snapshot.child("villar/SLG").val()
+    ];
+    $scope.OPS = [
+        snapshot.child("arcia/OPS").val(),
+        snapshot.child("bandy/OPS").val(),
+        snapshot.child("braun/OPS").val(),
+        snapshot.child("broxton/OPS").val(),
+        snapshot.child("perez/OPS").val(),
+        snapshot.child("pina/OPS").val(),
+        snapshot.child("santana/OPS").val(),
+        snapshot.child("shaw/OPS").val(),
+        snapshot.child("thames/OPS").val(),
+        snapshot.child("villar/OPS").val()
     ];
   });
-*/
   
   }
 })();

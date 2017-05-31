@@ -65,7 +65,13 @@
         ChartJsProvider.setOptions('bar', {
             tooltips: {
                 enabled: false
-            }
+            },        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
         });
     }
 
