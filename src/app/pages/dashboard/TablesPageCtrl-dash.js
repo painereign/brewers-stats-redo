@@ -5,12 +5,12 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.dashboard')
-      .controller('TablesPageCtrl', TablesPageCtrl);
+  angular.module('BlurAdmin.pages.tables')
+      .controller('TablesPageCtrl-dash', TablesPageCtrl);
 
   /** @ngInject */
   function TablesPageCtrl($scope, $filter, editableOptions, editableThemes) {
-  console.log("tables ctrl");
+  
 
   var config = {
     apiKey: "AIzaSyBcQ9HIE-b2Wf2matGSzFmPgXa-JpiSjhA",
@@ -198,6 +198,8 @@
       }
     ];
     });
+ 
+
   }
 
 })();
