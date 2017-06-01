@@ -25,8 +25,6 @@
     .then(function(snapshot){
     var key = snapshot.key; 
 
-    console.log(snapshot.child("AL East/Baltimore Orioles").val());
-
     $scope.ALETable = [
       {
         team: snapshot.child("AL East/Baltimore Orioles").key,
@@ -79,8 +77,8 @@
         record: snapshot.child("AL West/Houston Astros").val()
       },
       {
-        team: snapshot.child("AL West/Los Angeles Angels").key,
-        record: snapshot.child("AL West/Los Angeles Angels").val()
+        team: snapshot.child("AL West/Los Angeles Angels of Anaheim").key,
+        record: snapshot.child("AL West/Los Angeles Angels of Anaheim").val()
       },
       {
         team: snapshot.child("AL West/Oakland Athletics").key,

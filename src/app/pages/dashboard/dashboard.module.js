@@ -11,7 +11,6 @@
 
   /** @ngInject */
   function routeConfig($stateProvider, $urlRouterProvider) {
-  console.log("tablepagectrl");
     $stateProvider
         .state('dashboard', {
           url: '/dashboard',
